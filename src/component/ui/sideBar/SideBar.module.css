@@ -4,4 +4,40 @@
   bottom: 0;
   background-color: black;
   width: 117px;
+  padding-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.imgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.img {
+  padding: 14px;
+  width: 32px;
+  background-color: white;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.img:hover {
+  transform: scale(1.3);
+}
+
+.text {
+  color: white;
+  transform: rotate(-90deg);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  display: ruby;
+  margin: 0;
+  padding: 0;
 }
