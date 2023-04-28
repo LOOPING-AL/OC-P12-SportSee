@@ -1,0 +1,50 @@
+.chart_legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  list-style: none;
+  margin-bottom: 47px;
+}
+.chart_legend_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #20253a;
+}
+
+.chart_legent_alllist {
+  margin: 0;
+  padding: 0;
+}
+.chart_legend_list {
+  display: ruby;
+}
+.chart_legend_item {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #74798c;
+  margin-left: 12px;
+  margin-right: 32px;
+}
+
+.toolTip {
+  background-color: #e60000;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 39px;
+}
+.toolTip_Value {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

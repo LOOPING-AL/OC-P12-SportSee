@@ -2,7 +2,6 @@
   margin-top: 2%;
   margin-left: 220px;
   margin-right: 90px;
-  margin-bottom: 86px;
 }
 
 .top_title {
@@ -19,9 +18,52 @@
 }
 
 .graph {
-  background-color: red;
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
 }
+
+.firstGraph {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-right: 10px;
+  padding-left: 32px;
+  height: 40%;
+}
+
+.otherGraph {
+  height: 50%;
+  display: flex;
+  gap: 3%;
+}
+
+.lineChart {
+  width: 30%;
+  background-color: #ff0000;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+
+.radarChart {
+  width: 30%;
+  background: #282d30;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+}
+
+.radialBarChart {
+  width: 30%;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+}
+
 .keyData {
   width: 25%;
   height: 10%;

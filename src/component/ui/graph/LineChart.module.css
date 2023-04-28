@@ -1,0 +1,32 @@
+.legend {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.5;
+  transition: all 0.5s;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.legend:hover {
+  opacity: 1;
+}
+
+.toolTip {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 39px;
+}
+.toolTip_Value {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

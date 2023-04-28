@@ -26,9 +26,18 @@ export interface Activity {
 export interface Performance {
   data: {
     data: { kind: number; value: number }[];
-    kind: { [key: number]: string };
+    kind: any;
+    userId: number;
+    // kind: { [key: number]: string };
   };
 }
 export interface AverageSessions {
   data: { sessions: { day: number; sessionLenght: number }[] };
+}
+
+export interface AllData {
+  user: User | undefined;
+  performance: Performance | undefined;
+  activity: Activity | undefined;
+  averageSessions: AverageSessions | undefined;
 }
