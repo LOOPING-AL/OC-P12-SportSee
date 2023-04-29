@@ -25,4 +25,4 @@ This project is linked with this [backend project](https://github.com/OpenClassr
 
 The CRA default port has been changed to 3001. The backend project port is 3000.  
 To see user's information, you need to change the url to `localhost:3001/?userId=`+`userId`.  
-For the moment, you can just use userId 12 and 18.
+For the moment, you can just use `userId` 12 and 18.
