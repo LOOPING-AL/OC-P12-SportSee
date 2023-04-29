@@ -1,11 +1,10 @@
 # OpenClassrooms P12 Dashboard to SportSee
 
-This is a dashbord to follow data about life.
+This project is a dashbord to monitor health data.
 
 ## 1. General information
 
-This project is used with another [git project](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).  
-Install and start this other.
+This project is linked with this [backend project](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) that should be installed and run first.
 
 ## 2. Installation
 
@@ -22,8 +21,8 @@ Install and start this other.
 
 `npm run start`
 
-## Informations
+## 3.Informations
 
-The default port to use CRA is change to use 3001 because 3000 is used by backend.  
-To show user's information, you need to change the url `localhost:3001/?userId=`+`userId`.  
-Now you juste can use userId 12 and 18.  
+The CRA default port has been changed to 3001. The backend project port is 3000.  
+To see user's information, you need to change the url to `localhost:3001/?userId=`+`userId`.  
+For the moment, you can just use userId 12 and 18.
