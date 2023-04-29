@@ -1,5 +1,6 @@
 import { HomeMainTop, HomeMainInfo, styles } from "./index";
 import { useAllData } from "../../../api/services/user";
+import { Loader } from "../../ui";
 
 const HomeMain = () => {
   const params = new URLSearchParams(window.location.search);
@@ -12,11 +13,18 @@ const HomeMain = () => {
   const data = { user, activity, averageSessions, performance };
 
   return (
-    <div className={styles.main}>
-      <HomeMainTop user={user} />
-      <HomeMainInfo data={data} />
-    </div>
+    <>
+      {typeof user !== "string" ? (
+        <div className={styles.main}>
+          <HomeMainTop user={user} />
+          <HomeMainInfo data={data} />
+        </div>
+      ) : (
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      )}
+    </>
   );
 };
-
 export default HomeMain;

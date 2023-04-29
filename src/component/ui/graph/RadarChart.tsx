@@ -8,12 +8,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Performance } from "../../../ts/type/types";
+import styles from "./RadarChart.module.css";
+import { useRef } from "react";
 
-const RadarChartUI = ({ data }: { data: Performance | undefined }) => {
+const RadarChartUI = ({ data }: { data: Performance }) => {
   const performance = data?.data.data.map((d: any) => {
     d.activity = data.data.kind[Object.keys(data.data.kind)[d.kind - 1]];
     return d;
   });
+
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  console.log(windowSize);
+  const fontSize = windowSize.current[0] > 1550 ? 12 : 10;
+  console.log(windowSize.current);
 
   return (
     <ResponsiveContainer>
@@ -23,7 +30,7 @@ const RadarChartUI = ({ data }: { data: Performance | undefined }) => {
           dataKey="activity"
           tick={{
             fontFamily: "Roboto",
-            fontSize: 12,
+            fontSize: fontSize,
           }}
           stroke="white"
           tickLine={false}

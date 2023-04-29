@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload, label }: any): JSX.Element | null => {
   return null;
 };
 
-const LineChartUI = ({ data }: { data: AverageSessions | undefined }) => {
+const LineChartUI = ({ data }: { data: AverageSessions }) => {
   const weekday = [
     "Lundi",
     "Mardi",

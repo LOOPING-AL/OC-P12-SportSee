@@ -1,5 +1,5 @@
-import styles from "./Header.module.css";
 import { Logo } from "../../../assets/index";
+import styles from "./Header.module.css";
 
 const navItems = ["Accueil", "Profil", "Réglages", "Communauté"];
 

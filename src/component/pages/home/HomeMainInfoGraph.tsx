@@ -1,27 +1,41 @@
 import { AllData } from "../../../ts/type/types";
-import { BarChart, LineChart, RadarChart, RadialBarChart } from "../../index";
+import {
+  BarChart,
+  LineChart,
+  RadarChart,
+  RadialBarChart,
+  Loader,
+} from "../../index";
 import styles from "./Home.module.css";
 
 const HomeMainInfoGraph = ({ data }: { data: AllData }) => (
   <div className={styles.graph}>
     <div className={styles.firstGraph}>
-      <BarChart data={data.activity} />
+      {data.activity ? <BarChart data={data.activity} /> : <Loader />}
     </div>
     <div className={styles.otherGraph}>
       <div className={styles.lineChart}>
-        <LineChart data={data.averageSessions} />
+        {data.averageSessions ? (
+          <LineChart data={data.averageSessions} />
+        ) : (
+          <Loader />
+        )}
       </div>
       <div className={styles.radarChart}>
-        <RadarChart data={data.performance} />
+        {data.performance ? <RadarChart data={data.performance} /> : <Loader />}
       </div>
       <div className={styles.radialBarChart}>
-        <RadialBarChart
-          average={
-            data.user?.data.todayScore
-              ? data.user?.data.todayScore
-              : data.user?.data.score
-          }
-        />
+        {data.user?.data.todayScore || data.user?.data.score ? (
+          <RadialBarChart
+            average={
+              data.user?.data.todayScore
+                ? data.user?.data.todayScore
+                : data.user?.data.score
+            }
+          />
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   </div>

@@ -6,4 +6,6 @@ export {
   RadialBarChart,
   SideBar,
   KeyData,
+  KeyDat,
+  Loader,
 } from "./ui/index";

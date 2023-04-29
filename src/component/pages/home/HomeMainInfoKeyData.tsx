@@ -1,35 +1,55 @@
+import { Apple, Cheeseburger, Chicken, Energy } from "../../../assets/index";
 import { User } from "../../../ts/type/types";
+import { KeyData, Loader } from "../../index";
 import styles from "./Home.module.css";
-import { Energy, Chicken, Apple, Cheeseburger } from "../../../assets/index";
-import { KeyData } from "../../index";
 
-const HomeMainInfoKeyData = ({ user }: { user: User | undefined }) => (
-  <div className={styles.keyData}>
-    <KeyData
-      img={Energy}
-      number={user?.data.keyData.calorieCount}
-      unit="kCal"
-      info="Calories"
-    />
-    <KeyData
-      img={Chicken}
-      number={user?.data.keyData.proteinCount}
-      unit="g"
-      info="Proteines"
-    />
-    <KeyData
-      img={Apple}
-      number={user?.data.keyData.carbohydrateCount}
-      unit="g"
-      info="Glucides"
-    />
-    <KeyData
-      img={Cheeseburger}
-      number={user?.data.keyData.lipidCount}
-      unit="g"
-      info="Lipides"
-    />
-  </div>
-);
+const HomeMainInfoKeyData = ({ user }: { user: User | undefined }) => {
+  const keys = [
+    {
+      img: Energy,
+      number: user?.data.keyData.calorieCount,
+      unit: "kCal",
+      info: "Calories",
+    },
+    {
+      img: Chicken,
+      number: user?.data.keyData.proteinCount,
+      unit: "g",
+      info: "Proteines",
+    },
+    {
+      img: Apple,
+      number: user?.data.keyData.carbohydrateCount,
+      unit: "g",
+      info: "Glucides",
+    },
+    {
+      img: Cheeseburger,
+      number: user?.data.keyData.lipidCount,
+      unit: "g",
+      info: "Lipides",
+    },
+  ];
+
+  return (
+    <div className={styles.keyData}>
+      {keys.map((key, index) => (
+        <>
+          {user ? (
+            <KeyData
+              img={key.img}
+              number={key.number}
+              unit={key.unit}
+              info={key.info}
+              key={index}
+            />
+          ) : (
+            <Loader key={index} />
+          )}
+        </>
+      ))}
+    </div>
+  );
+};
 
 export default HomeMainInfoKeyData;

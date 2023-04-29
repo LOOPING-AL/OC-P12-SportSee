@@ -1,0 +1,67 @@
+@keyframes ldio {
+  0% {
+    transform: scale(0.85);
+  }
+  5% {
+    transform: scale(1);
+  }
+  39% {
+    transform: scale(0.75);
+  }
+  45% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.ldio > div {
+  animation: ldio 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform-origin: 25px 25px;
+}
+.ldio > div div {
+  top: 15px;
+  left: 10px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #e90c59;
+  transform: rotate(45deg);
+}
+.ldio > div div:after,
+.ldio > div div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #e90c59;
+}
+.ldio > div div:before {
+  left: -12.5px;
+  border-radius: 50% 0 0 50%;
+}
+.ldio > div div:after {
+  top: -12.5px;
+  border-radius: 50% 50% 0 0;
+}
+.loadingio_spinner_heart {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  overflow: hidden;
+}
+.ldio {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+.ldio div {
+  box-sizing: content-box;
+}

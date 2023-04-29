@@ -41,7 +41,7 @@ const CustomTooltip = ({ active, payload, label }: any): JSX.Element | null => {
   return null;
 };
 
-const BarChartUI = ({ data }: { data: Activity | undefined }) => {
+const BarChartUI = ({ data }: { data: Activity }) => {
   const sessions = data?.data.sessions.map((session, index) => {
     session.day = String(index + 1);
     return session;

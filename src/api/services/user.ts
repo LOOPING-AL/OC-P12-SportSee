@@ -6,7 +6,7 @@ import {
   User,
 } from "../../ts/type/types";
 
-const baseUrl = "http://localhost:3001/user/";
+const baseUrl = "http://localhost:3000/user/";
 const activityPath = "/activity";
 const averageSessionsPath = "/average-sessions";
 const performancePath = "/performance";
@@ -32,7 +32,6 @@ export const useAllData = (id: number) => {
         data.json().then((data) => setPerformance(data))
       );
     };
-
     dataFetch();
   }, []);
 
