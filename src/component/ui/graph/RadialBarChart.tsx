@@ -27,24 +27,26 @@ const RenderLegend = ({ average }: { average: number | undefined }) => (
   </>
 );
 
-const RadialBarCharUI = ({ average }: { average: number | undefined }) => (
-  <ResponsiveContainer width="100%" height="100%">
-    <RadialBarChart
-      innerRadius="100%"
-      outerRadius="100%"
-      barSize={10}
-      data={data}
-      startAngle={90}
-      endAngle={average ? average * 360 + 90 : 0}
-    >
-      <RadialBar dataKey="uv" cornerRadius={5} />
-      <Legend
-        iconSize={0}
-        verticalAlign="middle"
-        content={<RenderLegend average={average} />}
-      />
-    </RadialBarChart>
-  </ResponsiveContainer>
-);
+const RadialBarCharUI = ({ average }: { average: number | undefined }) => {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <RadialBarChart
+        innerRadius="100%"
+        outerRadius="100%"
+        barSize={10}
+        data={data}
+        startAngle={90}
+        endAngle={average ? average * 360 + 90 : 0}
+      >
+        <RadialBar dataKey="uv" cornerRadius={5} />
+        <Legend
+          iconSize={0}
+          verticalAlign="middle"
+          content={<RenderLegend average={average} />}
+        />
+      </RadialBarChart>
+    </ResponsiveContainer>
+  );
+};
 
 export default RadialBarCharUI;

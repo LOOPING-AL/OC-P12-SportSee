@@ -1,5 +1,5 @@
 import { User } from "../../../ts/type/types";
-import styles from "./Home.module.css";
+import { styles } from "./index";
 
 const HomeMainTop = ({ user }: { user: User | undefined }) => {
   const firstName = user?.data.userInfos.firstName;

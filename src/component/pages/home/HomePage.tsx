@@ -1,6 +1,5 @@
-import Header from "../../ui/header/Header";
-import SideBar from "../../ui/sideBar/SideBar";
-import HomeMain from "./HomeMain";
+import { Header, SideBar } from "../../index";
+import { HomeMain } from "./index";
 import "../../../assets/style/App.css";
 
 const App = () => (

@@ -1,10 +1,14 @@
-import HomeMainInfo from "./HomeMainInfo";
-import HomeMainTop from "./HomeMainTop";
-import styles from "./Home.module.css";
+import { HomeMainTop, HomeMainInfo, styles } from "./index";
 import { useAllData } from "../../../api/services/user";
 
 const HomeMain = () => {
-  const { user, activity, averageSessions, performance } = useAllData(12);
+  const params = new URLSearchParams(window.location.search);
+  const userId = params.get("userId");
+
+  const { user, activity, averageSessions, performance } = useAllData(
+    Number(userId)
+  );
+
   const data = { user, activity, averageSessions, performance };
 
   return (
@@ -14,4 +18,5 @@ const HomeMain = () => {
     </div>
   );
 };
+
 export default HomeMain;

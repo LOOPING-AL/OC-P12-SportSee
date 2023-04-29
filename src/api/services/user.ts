@@ -22,13 +22,13 @@ export const useAllData = (id: number) => {
       fetch(baseUrl + id).then((data) =>
         data.json().then((data) => setUser(data))
       );
-      fetch(baseUrl + 12 + activityPath).then((data) =>
+      fetch(baseUrl + id + activityPath).then((data) =>
         data.json().then((data) => setActivity(data))
       );
-      fetch(baseUrl + 12 + averageSessionsPath).then((data) =>
+      fetch(baseUrl + id + averageSessionsPath).then((data) =>
         data.json().then((data) => setAverageSessions(data))
       );
-      fetch(baseUrl + 12 + performancePath).then((data) =>
+      fetch(baseUrl + id + performancePath).then((data) =>
         data.json().then((data) => setPerformance(data))
       );
     };

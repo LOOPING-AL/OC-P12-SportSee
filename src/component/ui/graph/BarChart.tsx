@@ -9,8 +9,7 @@ import {
   Bar,
 } from "recharts";
 import styles from "./BarChart.module.css";
-import OvalBlack from "../../../assets/img/icons/Oval.png";
-import OvalRed from "../../../assets/img/icons/Oval Copy.png";
+import { OvalBlack, OvalRed } from "../../../assets/index";
 import { Activity } from "../../../ts/type/types";
 
 const renderLegend = () => (

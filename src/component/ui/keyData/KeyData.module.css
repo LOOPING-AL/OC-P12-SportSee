@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  height: 124px;
+  width: 100%;
+  align-items: center;
+  padding-left: 20%;
+}
+
+.card_img {
+  border-radius: 6px;
+  padding: 21px;
+  margin-right: 15%;
+}
+
+.card_text_top {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.card_text_bottom {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #74798c;
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.blue {
+  background: rgba(74, 184, 255, 0.1);
+}
+.yellow {
+  background: rgba(249, 206, 35, 0.1);
+}
+.pink {
+  background: rgba(253, 81, 129, 0.1);
+}

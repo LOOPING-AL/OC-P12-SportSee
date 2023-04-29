@@ -7,7 +7,8 @@ export interface User {
       lipidCount: number;
       proteinCount: number;
     };
-    todayScore: number;
+    todayScore?: number;
+    score?: number;
     userInfos: {
       age: number;
       firstName: string;

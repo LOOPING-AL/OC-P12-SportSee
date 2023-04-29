@@ -1,10 +1,7 @@
 import styles from "./SideBar.module.css";
-import meditation from "../../../assets/img/icons/meditation.png";
-import swim from "../../../assets/img/icons/swim.png";
-import bike from "../../../assets/img/icons/bike.png";
-import dumbbell from "../../../assets/img/icons/dumbbell.png";
+import { Meditation, Swim, Bike, Dumbbell } from "../../../assets/index";
 
-const imgNames = [meditation, swim, bike, dumbbell];
+const imgNames = [Meditation, Swim, Bike, Dumbbell];
 
 const Header = () => (
   <div className={styles.main}>
