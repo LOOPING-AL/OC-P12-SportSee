@@ -1,9 +1,8 @@
 import styles from "./SideBar.module.css";
-import { Meditation, Swim, Bike, Dumbbell } from "../../../assets/index";
+import { imgNames } from "../../../assets";
 
-const imgNames = [Meditation, Swim, Bike, Dumbbell];
-
-const Header = () => (
+/** SideBar */
+const SideBar = () => (
   <div className={styles.main}>
     <div className={styles.imgs}>
       {imgNames.map((imgName, index) => (
@@ -15,4 +14,4 @@ const Header = () => (
   </div>
 );
 
-export default Header;
+export default SideBar;

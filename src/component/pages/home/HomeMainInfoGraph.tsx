@@ -8,6 +8,11 @@ import {
 } from "../../index";
 import styles from "./Home.module.css";
 
+/**
+ * Show all graphs
+ * @param { import("../../../ts/type/types").AllData } data
+ * @returns {JSX.Element} JSX.Element
+ * */
 const HomeMainInfoGraph = ({ data }: { data: AllData }) => (
   <div className={styles.graph}>
     <div className={styles.firstGraph}>

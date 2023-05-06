@@ -1,22 +1,21 @@
 import { HomeMainTop, HomeMainInfo, styles } from "./index";
-import { useAllData } from "../../../api/services/user";
+import { getAllData } from "../../../api/services/user";
 import { Loader } from "../../ui";
+import { getUserId } from "../../../assets";
 
+/**
+ * @returns {JSX.Element} JSX.Element
+ */
 const HomeMain = () => {
-  const params = new URLSearchParams(window.location.search);
-  const userId = params.get("userId");
+  const userId = getUserId();
 
-  const { user, activity, averageSessions, performance } = useAllData(
-    Number(userId)
-  );
-
-  const data = { user, activity, averageSessions, performance };
+  const data = getAllData(Number(userId));
 
   return (
     <>
-      {typeof user !== "string" ? (
+      {typeof data.user !== "string" ? (
         <div className={styles.main}>
-          <HomeMainTop user={user} />
+          <HomeMainTop user={data.user} />
           <HomeMainInfo data={data} />
         </div>
       ) : (
@@ -27,4 +26,5 @@ const HomeMain = () => {
     </>
   );
 };
+
 export default HomeMain;

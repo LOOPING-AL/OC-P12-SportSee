@@ -3,6 +3,11 @@ import { User } from "../../../ts/type/types";
 import { KeyData, Loader } from "../../index";
 import styles from "./Home.module.css";
 
+/**
+ * Show all key data
+ * @param { import("../../../ts/type/types").User | undefined} user
+ * @returns {JSX.Element} JSX.Element
+ */
 const HomeMainInfoKeyData = ({ user }: { user: User | undefined }) => {
   const keys = [
     {
@@ -34,19 +39,18 @@ const HomeMainInfoKeyData = ({ user }: { user: User | undefined }) => {
   return (
     <div className={styles.keyData}>
       {keys.map((key, index) => (
-        <>
+        <div key={index}>
           {user ? (
             <KeyData
               img={key.img}
               number={key.number}
               unit={key.unit}
               info={key.info}
-              key={index}
             />
           ) : (
             <Loader key={index} />
           )}
-        </>
+        </div>
       ))}
     </div>
   );

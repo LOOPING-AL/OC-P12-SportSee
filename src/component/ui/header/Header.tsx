@@ -1,8 +1,7 @@
-import { Logo } from "../../../assets/index";
+import { Logo, navItems } from "../../../assets/index";
 import styles from "./Header.module.css";
 
-const navItems = ["Accueil", "Profil", "Réglages", "Communauté"];
-
+/** Headers */
 const Header = () => (
   <header className={styles.main}>
     <img src={Logo} alt="logo" className={styles.img} />

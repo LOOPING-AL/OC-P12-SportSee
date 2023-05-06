@@ -11,7 +11,7 @@ const activityPath = "/activity";
 const averageSessionsPath = "/average-sessions";
 const performancePath = "/performance";
 
-export const useAllData = (id: number) => {
+export const getAllData = (id: number) => {
   const [user, setUser] = useState<User>();
   const [activity, setActivity] = useState<Activity>();
   const [averageSessions, setAverageSessions] = useState<AverageSessions>();

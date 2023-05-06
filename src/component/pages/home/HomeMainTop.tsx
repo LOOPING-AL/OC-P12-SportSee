@@ -2,6 +2,11 @@ import { User } from "../../../ts/type/types";
 import { Loader } from "../../index";
 import { styles } from "./index";
 
+/**
+ * Show Hello and the user name
+ * @param { import("../../../ts/type/types").User | undefined} user
+ * @returns {JSX.Element} JSX.Element
+ */
 const HomeMainTop = ({ user }: { user: User | undefined }) => {
   let firstName = user?.data.userInfos.firstName;
 

@@ -1,4 +1,4 @@
-export { BarChart, LineChart, RadarChart, RadialBarChart } from "./graph/index";
+export * from "./graph/index";
 export { default as Header } from "./header/Header";
 export { default as KeyData } from "./keyData/KeyData";
 export { default as KeyDat } from "./loader/Loader";
