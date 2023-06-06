@@ -18,7 +18,7 @@ const RadarChartUI = ({ data }: { data: Performance }) => {
   });
 
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const fontSize = windowSize.current[0] > 1550 ? 12 : 10;
+  const fontSize = windowSize.current[0] > 1550 ? 12 : 9;
 
   return (
     <ResponsiveContainer>
