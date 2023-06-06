@@ -5,7 +5,9 @@ import "../../../assets/style/App.css";
 const App = () => (
   <>
     <Header />
+
     <SideBar />
+
     <HomeMain />
   </>
 );

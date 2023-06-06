@@ -1,5 +1,5 @@
 import { HomeMainTop, HomeMainInfo, styles } from "./index";
-import { getAllData } from "../../../api/services/user";
+import { getAllData } from "../../../api/services/callApi";
 import { Loader } from "../../ui";
 import { getUserId } from "../../../assets";
 
@@ -13,14 +13,24 @@ const HomeMain = () => {
 
   return (
     <>
-      {typeof data.user !== "string" ? (
-        <div className={styles.main}>
-          <HomeMainTop user={data.user} />
-          <HomeMainInfo data={data} />
+      {data.error ? (
+        <div className={styles.loader}>
+          <p>
+            Il y a actuellement un problème avec le serveur merci d'essayer
+            plus tard
+          </p>
+          <Loader />
+        </div>
+      ) : typeof data.user === "string" ? (
+        <div className={styles.loader}>
+          <p>Vous n'êtes pas correctement identifié</p>
+          <Loader />
         </div>
       ) : (
-        <div className={styles.loader}>
-          <Loader />
+        <div className={styles.main}>
+          <HomeMainTop user={data.user} />
+
+          <HomeMainInfo data={data} />
         </div>
       )}
     </>

@@ -29,7 +29,6 @@ export interface Performance {
     data: { kind: number; value: number }[];
     kind: any;
     userId: number;
-    // kind: { [key: number]: string };
   };
 }
 export interface AverageSessions {

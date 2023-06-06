@@ -4,7 +4,7 @@ import { styles } from "./index";
 
 /**
  * Show Hello and the user name
- * @param { import("../../../ts/type/types").User | undefined} user
+ * @param {User | undefined} user
  * @returns {JSX.Element} JSX.Element
  */
 const HomeMainTop = ({ user }: { user: User | undefined }) => {
@@ -18,6 +18,7 @@ const HomeMainTop = ({ user }: { user: User | undefined }) => {
           {firstName ? firstName : <Loader />}
         </span>
       </h1>
+
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏 </p>
     </>
   );

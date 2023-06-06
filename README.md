@@ -13,7 +13,7 @@ This project is linked with this [backend project](https://github.com/OpenClassr
 `git clone https://github.com/LOOPING-AL/OC-P12-SportSee.git`  
 `cd OC-P12-SportSee`
 
-### 2.2 Install dependancies
+### 2.2 Install dependencies
 
 `npm install`
 

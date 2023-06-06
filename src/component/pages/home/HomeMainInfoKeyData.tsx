@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 
 /**
  * Show all key data
- * @param { import("../../../ts/type/types").User | undefined} user
+ * @param {import("../../../ts/type/types").User | undefined} user
  * @returns {JSX.Element} JSX.Element
  */
 const HomeMainInfoKeyData = ({ user }: { user: User | undefined }) => {

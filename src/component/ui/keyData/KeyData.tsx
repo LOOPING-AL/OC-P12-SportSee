@@ -23,11 +23,13 @@ const KeyData = ({
   return (
     <div className={styles.card}>
       <img src={img} alt={img} className={`${styles.card_img} ${style}`} />
+
       <div className={styles.card_text}>
         <p className={styles.card_text_top}>
           {number}
           {unit}
         </p>
+
         <p className={styles.card_text_bottom}>{info}</p>
       </div>
     </div>

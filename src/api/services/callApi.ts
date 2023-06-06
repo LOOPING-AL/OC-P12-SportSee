@@ -16,24 +16,39 @@ export const getAllData = (id: number) => {
   const [activity, setActivity] = useState<Activity>();
   const [averageSessions, setAverageSessions] = useState<AverageSessions>();
   const [performance, setPerformance] = useState<Performance>();
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const dataFetch = async () => {
-      fetch(baseUrl + id).then((data) =>
-        data.json().then((data) => setUser(data))
-      );
-      fetch(baseUrl + id + activityPath).then((data) =>
-        data.json().then((data) => setActivity(data))
-      );
+      fetch(baseUrl + id)
+        .then((data) => data.json().then((data) => setUser(data)))
+        .catch(() => setError(true));
+
+      setTimeout(() => {
+        fetch(baseUrl + id + activityPath)
+          .then((data) => data.json().then((data) => setActivity(data)))
+          .catch(() => setError(true));
+      }, 2000);
+
       fetch(baseUrl + id + averageSessionsPath).then((data) =>
-        data.json().then((data) => setAverageSessions(data))
+        data
+          .json()
+          .then((data) => setAverageSessions(data))
+          .catch(() => setError(true))
       );
+
       fetch(baseUrl + id + performancePath).then((data) =>
-        data.json().then((data) => setPerformance(data))
+        data
+          .json()
+          .then((data) => setPerformance(data))
+          .catch(() => setError(true))
       );
     };
-    dataFetch();
-  }, []);
 
-  return { user, activity, averageSessions, performance };
+    setTimeout(() => {
+      dataFetch();
+    }, 1000);
+  });
+
+  return { user, activity, averageSessions, performance, error };
 };

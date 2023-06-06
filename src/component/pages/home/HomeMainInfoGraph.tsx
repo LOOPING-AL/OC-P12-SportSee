@@ -18,6 +18,7 @@ const HomeMainInfoGraph = ({ data }: { data: AllData }) => (
     <div className={styles.firstGraph}>
       {data.activity ? <BarChart data={data.activity} /> : <Loader />}
     </div>
+
     <div className={styles.otherGraph}>
       <div className={styles.lineChart}>
         {data.averageSessions ? (
@@ -26,9 +27,11 @@ const HomeMainInfoGraph = ({ data }: { data: AllData }) => (
           <Loader />
         )}
       </div>
+
       <div className={styles.radarChart}>
         {data.performance ? <RadarChart data={data.performance} /> : <Loader />}
       </div>
+      
       <div className={styles.radialBarChart}>
         {data.user?.data.todayScore || data.user?.data.score ? (
           <RadialBarChart
