@@ -9,15 +9,15 @@ import { getUserId } from "../../../assets";
 const HomeMain = () => {
   const userId = getUserId();
 
-  const data = getAllData(Number(userId));
+  let data = getAllData(Number(userId));
 
   return (
     <>
       {data.error ? (
         <div className={styles.loader}>
           <p>
-            Il y a actuellement un problème avec le serveur merci d'essayer
-            plus tard
+            Il y a actuellement un problème avec le serveur merci d'essayer plus
+            tard
           </p>
           <Loader />
         </div>

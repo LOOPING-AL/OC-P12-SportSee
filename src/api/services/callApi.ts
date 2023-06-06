@@ -20,29 +20,32 @@ export const getAllData = (id: number) => {
 
   useEffect(() => {
     const dataFetch = async () => {
-      fetch(baseUrl + id)
-        .then((data) => data.json().then((data) => setUser(data)))
-        .catch(() => setError(true));
+      !user &&
+        fetch(baseUrl + id)
+          .then((data) => data.json().then((data) => setUser(data)))
+          .catch(() => setError(true));
 
       setTimeout(() => {
-        fetch(baseUrl + id + activityPath)
-          .then((data) => data.json().then((data) => setActivity(data)))
-          .catch(() => setError(true));
+        !activity &&
+          fetch(baseUrl + id + activityPath)
+            .then((data) => data.json().then((data) => setActivity(data)))
+            .catch(() => setError(true));
       }, 2000);
 
-      fetch(baseUrl + id + averageSessionsPath).then((data) =>
-        data
-          .json()
-          .then((data) => setAverageSessions(data))
-          .catch(() => setError(true))
-      );
-
-      fetch(baseUrl + id + performancePath).then((data) =>
-        data
-          .json()
-          .then((data) => setPerformance(data))
-          .catch(() => setError(true))
-      );
+      !averageSessions &&
+        fetch(baseUrl + id + averageSessionsPath).then((data) =>
+          data
+            .json()
+            .then((data) => setAverageSessions(data))
+            .catch(() => setError(true))
+        );
+      !performance &&
+        fetch(baseUrl + id + performancePath).then((data) =>
+          data
+            .json()
+            .then((data) => setPerformance(data))
+            .catch(() => setError(true))
+        );
     };
 
     setTimeout(() => {
